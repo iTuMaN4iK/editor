@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 
 project(editor VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-# project(print_ip VERSION 0.0.1)
+# project(editor VERSION 0.0.1)
 
 configure_file(version.h.in version.h)
 
@@ -30,17 +30,11 @@ if (MSVC)
     target_compile_options(helloworld PRIVATE
         /W4
     )
-    target_compile_options(test_printIP PRIVATE
-        /W4
-    )
 else ()
     target_compile_options(editor PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(helloworld PRIVATE
-        -Wall -Wextra -pedantic -Werror
-    )
-    target_compile_options(test_printIP PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 endif()
