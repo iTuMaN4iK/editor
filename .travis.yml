@@ -1,8 +1,14 @@
 language: cpp
+
+branches:
+  only:
+    - master
+
 addons:
   apt:
     packages:
       - doxygen
+
 before_script:
 - sudo apt-get install libgtest-dev -y
 - sudo apt-get install cmake
@@ -23,14 +29,14 @@ script:
 - cmake --build . --target package
 - doxygen doxyfile.in
 deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
+deploy:
   provider: script
   skip_cleanup: true
   script:
   - curl -T editor-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uituman4ik:f6fdee75835a66c818dc9ebadcf290afe733ffca "https://api.bintray.com/content/ituman4ik/otus-cpp/editor/$TRAVIS_BUILD_NUMBER/editor-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-#   keep_history: true
-#   on:
-#     branch: master
