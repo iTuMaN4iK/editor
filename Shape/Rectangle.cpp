@@ -1,7 +1,7 @@
 /*!
  * @file Rectangle.cpp
  * @author iTuMaN4iK (swaga.ituman4ik@gmail.com)
- * @brief
+ * @brief Реализация класса прямоугольных примитив.
  * @version 0.1
  * @date 2019-12-08
  *

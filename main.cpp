@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  * @author iTuMaN4iK (swaga.ituman4ik@gmail.com)
- * @brief
+ * @brief Главная функция
  * @version 0.1
  * @date 2019-11-18
  *
